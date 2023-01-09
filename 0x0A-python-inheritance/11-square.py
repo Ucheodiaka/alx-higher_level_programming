@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""this module defines a class MyInt that inherits from int"""
+"""this module defines a Rectangle subclass Square"""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class MyInt(int):
-    """Invert int operators == and !="""
+class Square(Rectangle):
+    """Represent a square"""
 
-    def __eq__(self, value):
-        """Override == opeartor with != behavior"""
-        return self.real != value
-
-    def __ne__(self, value):
-        """Override != operator with == behavior"""
-        return self.real == value
+    def __init__(self, size):
+        """Initialize a new square
+        """
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
